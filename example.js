@@ -1,7 +1,7 @@
-var hyperdrive = require('hyperdrive')
+var ddrive = require('ddrive')
 var storage = require('./')
 
-var archive = hyperdrive(storage('sandbox/my-dataset'), {latest: true})
+var archive = ddrive(storage('sandbox/my-dataset'), {latest: true})
 
 archive.writeFile('/foo', 'this is foo')
 archive.writeFile('/bar', 'this is bar')
@@ -12,7 +12,7 @@ archive.writeFile('/baz', 'this is baz', function () {
     console.log(buf)
   })
 
-  var clone = hyperdrive(storage('sandbox/my-dataset-clone'), archive.key, {sparse: true})
+  var clone = ddrive(storage('sandbox/my-dataset-clone'), archive.key, {sparse: true})
   var stream = archive.replicate()
 
   stream.pipe(clone.replicate()).pipe(stream)

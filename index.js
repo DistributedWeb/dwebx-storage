@@ -1,13 +1,13 @@
 var raf = require('random-access-file')
-var secretStorage = require('dat-secret-storage')
+var secretStorage = require('dwebx-secret-storage')
 var multi = require('multi-random-access')
 var messages = require('append-tree/messages')
-var stat = require('hyperdrive/lib/messages').Stat
+var stat = require('ddrive/lib/messages').Stat
 var path = require('path')
 
 module.exports = function (dir, opts) {
   if (!opts) opts = {}
-  var prefix = opts.prefix || '.dat/'
+  var prefix = opts.prefix || '.dwebx/'
   return {
     metadata: function (name, metaOpts) {
       if (typeof dir === 'function') return dir(prefix + 'metadata.' + name)
@@ -82,7 +82,7 @@ function createStorage (archive, dir) {
 function get (metadata, btm, seq, cb) {
   if (seq < btm) return cb(null, -1, null)
 
-  // TODO: this can be done a lot faster using the hypercore internal iterators, expose!
+  // TODO: this can be done a lot faster using the ddatabase internal iterators, expose!
   var i = seq
   while (!metadata.has(i) && i > btm) i--
   if (!metadata.has(i)) return cb(null, -1, null)

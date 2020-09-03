@@ -1,12 +1,12 @@
 {
-  "name": "dat-storage",
-  "version": "1.1.1",
-  "description": "Dat specific storage provider for Hyperdrive",
+  "name": "dwebx-storage",
+  "version": "1.0.0",
+  "description": "DWebX specific storage provider for DDrive",
   "main": "index.js",
   "dependencies": {
     "append-tree": "^2.0.5",
-    "dat-secret-storage": "^4.0.0",
-    "hyperdrive": "^9.1.1",
+    "dwebx-secret-storage": "git://github.com/DistributedWeb/dwebx-secret-storage.git#6dad339cc6308f659f3972a3035ca5e551d72d81",
+    "ddrive": "git://github.com/DistributedWeb/ddrive.git#0253e97b45d83aa74498acecc1fc85fb74427dc8",
     "multi-random-access": "^2.0.3",
     "random-access-file": "^2.0.1"
   },
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/datproject/dat-storage.git"
+    "url": "https://github.com/distributedweb/dwebx-storage.git"
   },
   "author": "Mathias Buus (@mafintosh)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/datproject/dat-storage/issues"
+    "url": "https://github.com/distributedweb/dwebx-storage/issues"
   },
-  "homepage": "https://github.com/datproject/dat-storage"
+  "homepage": "https://github.com/distributedweb/dwebx-storage"
 }
