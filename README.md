@@ -46,7 +46,7 @@ module.exports = function keychainStorage() {
 
 ### Secret Keys
 
-By default secret keys are stored in the users home directory via [dwebx-secret-storage](https://github.com/joehand/dwebx-secret-storage). To change the directory, pass it as an option:
+By default secret keys are stored in the users home directory via [dwebx-secret-storage](https://github.com/distributedweb/dwebx-secret-storage). To change the directory, pass it as an option:
 
 ```js
 var storage = require('dwebx-storage')
